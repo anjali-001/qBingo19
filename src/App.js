@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useContext} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
+import {Route,Switch} from 'react-router-dom';
+import Display from './components/Display';
+import DisplayPlus from './components/DisplayPlus';
+import DisplayMinus from './components/DisplayMinus';
+import Buttons from './components/Buttons';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Buttons />
+      <Switch>
+      <Route path="/" exact component={Display}/>
+      <Route path="/plus" exact component={DisplayPlus}/>
+      <Route path="/minus" exact component={DisplayMinus}/>
+      </Switch>
+      
     </div>
   );
 }

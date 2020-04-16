@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import {BrowserRouter as Route} from 'react-router-dom';
+import DisplayContextProvider from './DisplayContext'
 ReactDOM.render(
   <React.StrictMode>
+    <DisplayContextProvider>
+      <Route>
     <App />
-  </React.StrictMode>,
+    </Route>
+    </DisplayContextProvider>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 
